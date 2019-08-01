@@ -357,4 +357,4 @@ compile : compile-setup
 
 # -----------------------------------------------------------------------------
 # Blatt-spezifische makefile-Datei einbetten
-include $(TEST_DIR)/makefile_$(TEST_DIR).mk
+include blatt01/makefile_blatt01.mk
