@@ -14,8 +14,8 @@ SHELL = /bin/bash
 #    Teste alle Einsendungen, deren Verzeichnisname den angegebenen String 
 #    enth�lt. 
 
-test ?= 
-user ?= *
+test =blatt01
+user =sample
 
 # Sprache setzen, damit Sonderzeichen im Protokoll richtig angezeigt werden.
 LANG = #de_DE.UTF-8
@@ -35,23 +35,23 @@ SRC_GLOBAL_DIR = ./src
 RESOURCES = ./resources
 
 # Das zu testende Aufgabenblatt, bspw. blatt02 (=Verzeichnis)
-TEST_DIR = $(test)
+TEST_DIR = blatt01
 
 # Verzeichnis mit den eingesendeten Loesungen (Benutzerverzeichnisse)
-LOAD_DIR = ./$(TEST_DIR)/submissions
+LOAD_DIR = ./blatt01/submissions
 
 # Verzeichnisse, in denen sich die zu testenden Loesungen befinden
-DIRS = $(notdir $(wildcard $(LOAD_DIR)/*$(user)*))
+DIRS = $(notdir $(wildcard blatt01/submissions/Ulrike Griefahn_3047252/*))
 
 # Einsendung, die getestet werden soll (=Benutzerverzeichnis)
 USR_DIR = $(user)
 
 # Temporaeres Vezeichnis, in dem der Test einer Einsendung durchgefuehrt wird
 BUILD = build
-BUILD_DIR = ./$(TEST_DIR)/$(BUILD)
+BUILD_DIR = ./blatt01/$(BUILD)
 
 # Verzeichnis, in dem sich das blattspezifische Testmodul befindet
-TESTS_DIR = ./$(TEST_DIR)/tests
+TESTS_DIR = ./blatt01/tests
 
 # -----------------------------------------------------------------------------
 # Konfiguration Dateien / Programme
@@ -59,7 +59,7 @@ TESTS_DIR = ./$(TEST_DIR)/tests
 
 # Teile des Protokolldateinamens
 FILE_PROTOCOL_PREFIX=assignsubmission_file
-FILE_PROTOCOL=protokoll_$(TEST_DIR)
+FILE_PROTOCOL=protokoll_blatt01
 
 # max. Groesse der Protokolldatei 
 SIZE = 500KB
